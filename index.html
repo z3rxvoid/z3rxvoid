@@ -69,7 +69,7 @@
       transform: translate(-50%, -50%);
       object-fit: cover;
       filter: grayscale(1) brightness(0.25) blur(1px);
-      opacity: 0.5;
+      opacity: 0.15;
       transition: opacity 0.5s;
     }
 
@@ -146,6 +146,7 @@
       border: 1px solid var(--border);
       border-radius: 30px;
       backdrop-filter: blur(5px);
+      flex-wrap: wrap;
     }
 
     .lang-btn {
@@ -296,7 +297,7 @@
       filter: grayscale(0.8);
     }
 
-    /* ===== ВЕРТИКАЛЬНЫЕ ССЫЛКИ В ОДНУ КОЛОНКУ ===== */
+    /* ===== ВЕРТИКАЛЬНЫЕ ССЫЛКИ ===== */
     .links-vertical {
       display: flex;
       flex-direction: column;
@@ -322,7 +323,7 @@
       color: var(--text-dim);
       text-decoration: none;
       font-weight: 300;
-      font-size: 12px; /* Уменьшенный размер текста */
+      font-size: 12px;
       letter-spacing: 1px;
       text-shadow: var(--glow);
       display: block;
@@ -335,7 +336,6 @@
       text-shadow: 0 0 25px white;
     }
 
-    /* Специальный стиль для DONATE */
     .link-item.donate {
       border-color: rgba(255,255,255,0.3);
       background: rgba(255,255,255,0.03);
@@ -494,7 +494,14 @@
       }
       
       .link-item a {
-        font-size: 11px; /* Ещё меньше на мобильных */
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .language-selector {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -506,7 +513,6 @@
       }
     }
 
-    /* ===== УЛУЧШЕННАЯ ЧИТАЕМОСТЬ ===== */
     ::selection {
       background: rgba(255,255,255,0.2);
       color: white;
@@ -539,16 +545,17 @@
     <header>
       <div class="title-section">
         <h1>Z3RXVØID<span class="cursor"></span></h1>
-        <!-- Маленькое меню языков -->
+        <!-- Меню языков с китайским -->
         <div class="language-selector">
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="ru">RU</button>
           <button class="lang-btn" data-lang="ja">日</button>
           <button class="lang-btn" data-lang="ko">한</button>
+          <button class="lang-btn" data-lang="zh">简</button>
         </div>
       </div>
       
-      <!-- Меню навигации home/about/links -->
+      <!-- Меню навигации -->
       <div class="nav-menu">
         <button class="nav-btn active" data-section="home">HOME</button>
         <button class="nav-btn" data-section="about">ABOUT</button>
@@ -592,7 +599,7 @@
         </section>
       </div>
 
-      <!-- Секция LINKS с вертикальными ссылками -->
+      <!-- Секция LINKS -->
       <div id="links-section" class="content-section">
         <section>
           <h2 class="section-title" data-i18n="links.title">Links</h2>
@@ -615,13 +622,14 @@
     </main>
 
     <footer>
-  <div>© 2026 Z3RXVØID</div>
-  <div class="footer-links">
-    <a href="privacy.txt" data-i18n="footer.privacy">КОНФИДЕНЦИАЛЬНОСТЬ</a>
-    <a href="terms.txt" data-i18n="footer.terms">УСЛОВИЯ</a>
-    <a href="LICENSE.txt">MIT LICENSE</a>
+      <div>© 2026 Z3RXVØID</div>
+      <div class="footer-links">
+        <a href="privacy.txt" data-i18n="footer.privacy">PRIVACY</a>
+        <a href="terms.txt" data-i18n="footer.terms">TERMS</a>
+        <a href="LICENSE.txt">MIT LICENSE</a>
+      </div>
+    </footer>
   </div>
-</footer>
 
   <!-- Аудио для клика -->
   <audio id="clickSound" preload="none">
@@ -689,6 +697,20 @@
           'links.title': '링크',
           'footer.privacy': '개인정보',
           'footer.terms': '약관'
+        },
+        zh: {
+          'home.welcome': '欢迎',
+          'home.role': '音乐家、声音设计师',
+          'home.description': '通过实验性声音设计和电子音乐创造沉浸式音频体验',
+          'home.description2': '进入虚空。探索声音。',
+          'about.title': '关于',
+          'about.role': '音乐家、声音设计师',
+          'about.description1': '通过实验性声音设计和电子音乐创造沉浸式音频体验',
+          'about.description2': '在噪音与旋律、模拟温暖与数字精确的交汇处工作。每首作品都是穿越纹理与节奏的旅程。',
+          'about.description3': '立足于虚空，为未知创造声音。',
+          'links.title': '链接',
+          'footer.privacy': '隐私政策',
+          'footer.terms': '使用条款'
         }
       };
 
