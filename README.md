@@ -2,7 +2,7 @@
 
 Personal website of **Z3RXVØID** — musician and sound designer.
 
-🔗 **Live:** [https://z3rxvoid.github.io](https://z3rxvoid.github.io)
+🔗 **Live:** https://z3rxvoid.github.io
 
 ## Features
 - 5 languages (EN, RU, JA, KO, ZH)
